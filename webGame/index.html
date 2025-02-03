@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>問答遊戲</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+        }
+        .result {
+            display: none;
+            margin-top: 20px;
+        }
+        .result img, .question img {
+            width: 400px; /* Increased width */
+            height: auto;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h2>問答遊戲</h2>
+    <div class="question">
+        <img src="img/question.png" alt="題目圖片">
+    </div>
+    <!-- Removed the question text here -->
+    <button onclick="checkAnswer(1)">1</button>
+    <button onclick="checkAnswer(2)">2</button>
+    <button onclick="checkAnswer(3)">3</button>
+    <button onclick="checkAnswer(4)">4</button>
+    
+    <div id="correct" class="result">
+        <img src="img/correct.png" alt="正確的圖片">
+    </div>
+    <div id="incorrect" class="result">
+        <img src="img/incorrect.png" alt="錯誤的圖片">
+    </div>
+    
+    <script>
+        function checkAnswer(answer) {
+            if (answer === 2) {
+                // Open a new window showing the correct answer
+                window.open("correctPage.html", "_blank");
+            } else {
+                // Open a new window showing the incorrect answer
+                window.open("incorrectPage.html", "_blank");
+            }
+        }
+    </script>
+</body>
+</html>
